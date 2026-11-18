@@ -308,6 +308,19 @@
             margin-left: 3px;
         }
 
+        .surplus-cost {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #059669;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .surplus-cost .currency {
+            font-size: 0.85rem;
+            margin-left: 3px;
+        }
+
         .status-badge {
             display: inline-block;
             padding: 2px 10px;
@@ -456,7 +469,7 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="item-cost">3 800<span class="currency">Dh</span></div>
+                                <div class="item-cost">1 800<span class="currency">Dh</span></div>
                             </td>
                         </tr>
                         <tr>
@@ -522,7 +535,7 @@
                                 <strong>المجموع الشهري الإجمالي</strong>
                             </td>
                             <td>
-                                <div class="total-amount">5 890<span class="currency" style="font-size: 0.9rem; color: #059669; font-weight: 700; margin-left: 3px;">Dh</span></div>
+                                <div class="total-amount">3 890<span class="currency" style="font-size: 0.9rem; color: #059669; font-weight: 700; margin-left: 3px;">Dh</span></div>
                             </td>
                         </tr>
                     </tfoot>
@@ -541,7 +554,7 @@
                     <span>الحساب: <bdi dir="ltr" style="font-weight: 800; direction: ltr; unicode-bidi: isolate; margin-right: 4px;">30 × 150 = 4 500 Dh</bdi></span>
                 </div>
                 <p class="calc-note">
-                    <strong dir="ltr">4 500 Dh</strong> هو أقصى مدخول في الشهر، ولكن نظراً لأن ليس جميع السكان يؤدون واجباتهم كل شهر بانتظام، تم إعداد هذا الجدول لتوضيح تفاوت المداخيل وحجم العجز المترتب مقارنة بالمصاريف الثابتة (<strong dir="ltr">5 890 Dh</strong>):
+                    <strong dir="ltr">4 500 Dh</strong> هو أقصى مدخول في الشهر، ولكن نظراً لأن ليس جميع السكان يؤدون واجباتهم كل شهر بانتظام، تم إعداد هذا الجدول لتوضيح تفاوت المداخيل ومقارنتها بالمصاريف الثابتة (<strong dir="ltr">3 890 Dh</strong>):
                 </p>
             </div>
 
@@ -552,7 +565,7 @@
                             <th style="width: 36%;">عدد الشقق المؤدية</th>
                             <th style="width: 20%; text-align: center;">نسبة الأداء</th>
                             <th style="width: 22%; text-align: left;">المدخول الشهري</th>
-                            <th style="width: 22%; text-align: left;">العجز الشهري</th>
+                            <th style="width: 22%; text-align: left;">الفارق / الرصيد</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -570,21 +583,21 @@
                                 <div class="item-cost" style="color: #059669;">4 500<span class="currency">Dh</span></div>
                             </td>
                             <td>
-                                <div class="deficit-cost">-1 390<span class="currency">Dh</span></div>
+                                <div class="surplus-cost">+610<span class="currency">Dh</span></div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Alert Card on Financial Deficit -->
-            <div class="alert-deficit-card">
-                <h4>
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    تنبيه وتوضيح مالي مهم:
+            <!-- Alert Card on Financial Balance -->
+            <div class="alert-deficit-card" style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-right: 5px solid #16a34a;">
+                <h4 style="color: #166534;">
+                    <i class="fa-solid fa-circle-info"></i>
+                    توضيح مالي مهم:
                 </h4>
-                <p>
-                    المصاريف الثابتة للعمارة تبلغ شهرياً <strong dir="ltr">5 890 Dh</strong>، في حين أن الحد الأقصى للمداخيل (في حال أداء جميع الـ 30 شقة بنسبة 100%) هو <strong dir="ltr">4 500 Dh</strong> فقط (أي عجز أدنى قدره <strong dir="ltr" style="color: #dc2626;">-1 390 Dh</strong>). لذلك فإن أي تأخير أو امتناع عن الأداء يُفاقم هذا العجز المالي ويهدد استمرار الخدمات الأساسية للعمارة.
+                <p style="color: #14532d;">
+                    المصاريف الثابتة للعمارة تبلغ شهرياً <strong dir="ltr">3 890 Dh</strong>، في حين أن الحد الأقصى للمداخيل (في حال أداء جميع الـ 30 شقة بنسبة 100%) هو <strong dir="ltr">4 500 Dh</strong>، مما يتيح فائضاً احتياطياً قدره <strong dir="ltr" style="color: #16a34a;">+610 Dh</strong> يُخصص لصيانة الطوارئ والإصلاحات. غير أن تخلف 5 شقق فقط عن الأداء يُدخل ميزانية العمارة في عجز مالي، لذلك يبقى الالتزام الجماعي بالأداء الشهري ضرورياً لضمان استمرار الخدمات المشتركة.
                 </p>
             </div>
 
