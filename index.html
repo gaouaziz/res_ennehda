@@ -216,6 +216,140 @@
             text-align: center;
         }
 
+        .item-cost {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+            text-align: left;
+            direction: ltr;
+        }
+
+        .item-cost .currency {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-left: 3px;
+        }
+
+        tfoot {
+            background: linear-gradient(to left, #f8fafc, #f1f5f9);
+            border-top: 2px solid var(--border-color);
+        }
+
+        tfoot td {
+            padding: 16px 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .total-amount {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #059669;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 36px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section-header i {
+            color: var(--primary-light);
+        }
+
+        .calc-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-right: 5px solid var(--primary-light);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+
+        .calc-formula {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .calc-formula i {
+            color: var(--primary-light);
+        }
+
+        .calc-note {
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .deficit-cost {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #dc2626;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .deficit-cost .currency {
+            font-size: 0.85rem;
+            margin-left: 3px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .status-badge.max {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-badge.deficit {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .alert-deficit-card {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+            border-right: 5px solid #e11d48;
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 28px;
+        }
+
+        .alert-deficit-card h4 {
+            color: #9f1239;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert-deficit-card p {
+            color: #881337;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         .footer-note {
             background-color: #f8fafc;
             border: 1px solid var(--border-color);
@@ -305,8 +439,9 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 12%; text-align: center;">#</th>
-                            <th style="width: 88%;">بيان المصاريف الثابتة</th>
+                            <th style="width: 10%; text-align: center;">#</th>
+                            <th style="width: 62%;">بيان المصاريف الثابتة</th>
+                            <th style="width: 28%; text-align: left;">التكلفة الشهرية</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -320,6 +455,9 @@
                                     <span>حارس العمارة</span>
                                 </div>
                             </td>
+                            <td>
+                                <div class="item-cost">3 800<span class="currency">Dh</span></div>
+                            </td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">
@@ -330,6 +468,9 @@
                                     <i class="fa-solid fa-elevator"></i>
                                     <span>مصاريف المصعد</span>
                                 </div>
+                            </td>
+                            <td>
+                                <div class="item-cost">840<span class="currency">Dh</span></div>
                             </td>
                         </tr>
                         <tr>
@@ -342,6 +483,9 @@
                                     <span>مواد التنظيف والإنارة وغيرها</span>
                                 </div>
                             </td>
+                            <td>
+                                <div class="item-cost">400<span class="currency">Dh</span></div>
+                            </td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">
@@ -352,6 +496,9 @@
                                     <i class="fa-solid fa-bolt"></i>
                                     <span>الكهرباء المشتركة</span>
                                 </div>
+                            </td>
+                            <td>
+                                <div class="item-cost">500<span class="currency">Dh</span></div>
                             </td>
                         </tr>
                         <tr>
@@ -364,9 +511,81 @@
                                     <span>عاملة النظافة</span>
                                 </div>
                             </td>
+                            <td>
+                                <div class="item-cost">350<span class="currency">Dh</span></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="text-align: right; font-size: 1.05rem;">
+                                <strong>المجموع الشهري الإجمالي</strong>
+                            </td>
+                            <td>
+                                <div class="total-amount">5 890<span class="currency" style="font-size: 0.9rem; color: #059669; font-weight: 700; margin-left: 3px;">Dh</span></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Section: Variable Income Table -->
+            <h2 class="section-header">
+                <i class="fa-solid fa-chart-pie"></i>
+                جدول المداخيل غير الثابتة - 150 Dh / شقة
+            </h2>
+
+            <div class="calc-box">
+                <div class="calc-formula">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>الحساب: <bdi dir="ltr" style="font-weight: 800; direction: ltr; unicode-bidi: isolate; margin-right: 4px;">30 × 150 = 4 500 Dh</bdi></span>
+                </div>
+                <p class="calc-note">
+                    <strong dir="ltr">4 500 Dh</strong> هو أقصى مدخول في الشهر، ولكن نظراً لأن ليس جميع السكان يؤدون واجباتهم كل شهر بانتظام، تم إعداد هذا الجدول لتوضيح تفاوت المداخيل وحجم العجز المترتب مقارنة بالمصاريف الثابتة (<strong dir="ltr">5 890 Dh</strong>):
+                </p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 36%;">عدد الشقق المؤدية</th>
+                            <th style="width: 20%; text-align: center;">نسبة الأداء</th>
+                            <th style="width: 22%; text-align: left;">المدخول الشهري</th>
+                            <th style="width: 22%; text-align: left;">العجز الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="item-name">
+                                    <i class="fa-solid fa-building-circle-check"></i>
+                                    <span>30 شقة (الحد الأقصى)</span>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge max">100%</span>
+                            </td>
+                            <td>
+                                <div class="item-cost" style="color: #059669;">4 500<span class="currency">Dh</span></div>
+                            </td>
+                            <td>
+                                <div class="deficit-cost">-1 390<span class="currency">Dh</span></div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Alert Card on Financial Deficit -->
+            <div class="alert-deficit-card">
+                <h4>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    تنبيه وتوضيح مالي مهم:
+                </h4>
+                <p>
+                    المصاريف الثابتة للعمارة تبلغ شهرياً <strong dir="ltr">5 890 Dh</strong>، في حين أن الحد الأقصى للمداخيل (في حال أداء جميع الـ 30 شقة بنسبة 100%) هو <strong dir="ltr">4 500 Dh</strong> فقط (أي عجز أدنى قدره <strong dir="ltr" style="color: #dc2626;">-1 390 Dh</strong>). لذلك فإن أي تأخير أو امتناع عن الأداء يُفاقم هذا العجز المالي ويهدد استمرار الخدمات الأساسية للعمارة.
+                </p>
             </div>
 
             <!-- Polite Closing Note -->
